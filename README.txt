@@ -1,0 +1,1 @@
+this repo contains 4 different versions of rock_paper_scissors game coded in python, the last version, v4_improved.py is by far the best of the bunch and has been improved upon v1 and through. 
