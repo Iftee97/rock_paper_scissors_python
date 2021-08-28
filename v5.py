@@ -1,5 +1,7 @@
 import random
 
+print("\n---[Rock, Paper, Scissors]---\n")
+
 rock = '''
 rock
     _______
@@ -30,46 +32,39 @@ scissors
 ---.__(___)
 '''
 
-print("Welcome to Rock, Paper, Scissors Game\n")
-print("Rock beats Scissors")
-print("Paper beats Rock")
-print("Scissors beat Paper\n")
-print("player makes the first move, then the computer makes it's move at random")
-rps = [rock, paper, scissors]
+'''
+Rock wins against Scissors
+Scissors wins against Paper
+Paper wins agains Rock
+'''
 
-player_number = int(input("""\n0 for Rock, 
-1 for Paper, 
-2 for Scissors\n\n
-Enter Number: """))
+print("\n0 for Rock, 1 for paper, 2 for scissors\n")
 
-player_choice = rps[player_number]
-print(f"\nplayer chose: {player_choice}")
+choices = [rock, paper, scissors]
 
-computer_number = random.randint(0, 2)
-computer_choice = rps[computer_number]
-print(f"\ncomputer chose: {computer_choice}")
+user_number = int(input("enter choice: "))
+user_choice = choices[user_number]
 
-# 0 -> rock
-# 1 -> paper
-# 2 -> scissors
+random_number = random.randint(0, 2)
+computer_choice = choices[random_number]
 
-if player_number == computer_number:
-    print("Draw")
 
-elif player_number == 0 and computer_number == 1:
-    print("Computer Won!")
+if user_choice == rock and computer_choice == scissors:
+    print(
+        f"user choice: {user_choice}\ncomputer choice: {computer_choice}\n[user won]")
 
-elif player_number == 0 and computer_number == 2:
-    print("Player Won!")
+elif user_choice == scissors and computer_choice == paper:
+    print(
+        f"user choice: {user_choice}\ncomputer choice: {computer_choice}\n[user won]")
 
-elif player_number == 1 and computer_number == 0:
-    print("Player Won!")
+elif user_choice == paper and computer_choice == rock:
+    print(
+        f"user choice: {user_choice}\ncomputer choice: {computer_choice}\n[user won]")
 
-elif player_number == 1 and computer_number == 2:
-    print("Computer Won!")
+elif user_choice == computer_choice:
+    print(
+        f"user choice: {user_choice}\ncomputer choice: {computer_choice}\n[draw]")
 
-elif player_number == 2 and computer_number == 0:
-    print("Computer Won!")
-
-elif player_number == 2 and computer_number == 1:
-    print("Player Won!")
+else:
+    print(
+        f"user choice: {user_choice}\ncomputer choice: {computer_choice}\n[computer won]")
